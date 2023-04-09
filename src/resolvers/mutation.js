@@ -25,12 +25,27 @@ module.exports = {
       
         return cocktail;
     },
+    addUserData: async (parent, args, { models }) => {
+        const userData = await models.UserData.create({
+          username: args.username,
+          sex: args.sex,
+          name: args.name,
+          street: args.street,
+          number: args.number,
+          city: args.city,
+          postalCode: args.postalCode,
+          country: args.country,
+          creditcardName: args.creditcardName,
+          creditcardNumber: args.creditcardNumber
+        });
+      
+        return userData;
+    },
     addBook: async (parent, args, { models, user }) => {
-        // Check if the user is authenticated
-        /*
+        // Check if the user is authenticated      
         if (!user) {
           throw new AuthenticationError('You must be logged in to create a book');
-        }*/
+        }
       
         // Create the book
         const book = await models.Book.create({

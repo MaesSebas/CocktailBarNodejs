@@ -23,6 +23,7 @@ const getUser = token => {
   if (token) {
       try {
           // return the user information from the token
+          //return jwt.verify(token, process.env.JWT_SECRET);
           return jwt.verify(token, process.env.JWT_SECRET);
       } catch (err) {
           // if there's a problem with the token, throw an error
@@ -59,12 +60,12 @@ async function startServer() {
 startServer().then(() => {
   app.get('/', (req, res) => res.send('Hello World'));
   
-  /*
+  
   app.listen({ port }, () =>
     console.log(`Server running at http://localhost:${port}`)
   );
-  */
   
   
-  app.listen(process.env.PORT || 8080, () => console.log('Server Running'))
+  
+  //app.listen(process.env.PORT || 8080, () => console.log('Server Running'))
 });

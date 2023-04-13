@@ -20,7 +20,12 @@ module.exports = {
             name: args.name,
             price: args.price,
             stock: args.stock,
-            tags: args.tags
+            tags: args.tags,
+            tutorialVideo: args.tutorialVideo,
+            difficulty: args.difficulty,
+            steps: args.steps,
+            productVideo: args.productVideo,
+            images: args.images,
         });
       
         return cocktail;

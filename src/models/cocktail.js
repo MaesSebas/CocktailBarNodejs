@@ -30,6 +30,14 @@ const cocktailSchema = new mongoose.Schema({
         type: [String],
         required: true
     },
+    steps: {
+        type: [String],
+        required: true
+    },
+    difficulty: {
+        type: String,
+        required: true
+    },
     tags: {
         type: [String],
         required: true
@@ -37,7 +45,23 @@ const cocktailSchema = new mongoose.Schema({
     images: {
         type: [String],
         required: true
-    }
+    },
+    productVideo: {
+        type: String,
+        required: true
+    },
+    tutorialVideo: {
+        type: String,
+        required: true
+    },
+    AlcoholPercentage: {
+        type: String,
+        required: true
+    },
+    IngredientImages: {
+        type: [String],
+        required: true
+    },
 }, {
     timestamps: true
 });

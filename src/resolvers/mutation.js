@@ -8,6 +8,16 @@ const {
 } = require('apollo-server-express');
 require('dotenv').config();
 
+const CartItem = require('../models/cartitem');
+const newCartItem = new CartItem({
+    image: 'https://example.com/image.jpg',
+    title: 'testxample Ite',
+    size: 'Medium',
+    quantity: 2,
+    itemprice: 9.99,
+    totalprice: 19.98
+});
+
 
 module.exports = {
     addCocktail: async (parent, args, { models }) => {      
@@ -21,14 +31,24 @@ module.exports = {
             price: args.price,
             stock: args.stock,
             tags: args.tags,
-            tutorialVideo: args.tutorialVideo,
+            tutorialvideo: args.tutorialvideo,
             difficulty: args.difficulty,
             steps: args.steps,
-            productVideo: args.productVideo,
+            productvideo: args.productvideo,
             images: args.images,
         });
       
         return cocktail;
+    },
+    addOrder: async (parent, args, { models }) => {
+        const order = await models.Order.create({
+            orderid: args.orderid,
+            cartitems: args.cartitems,
+            total: args.total,
+            deliveryoption: args.deliveryoption
+        });
+        
+        return order;
     },
     addUserData: async (parent, args, { models }) => {
         const userData = await models.UserData.create({

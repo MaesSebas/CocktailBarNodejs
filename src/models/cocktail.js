@@ -46,19 +46,19 @@ const cocktailSchema = new mongoose.Schema({
         type: [String],
         required: true
     },
-    productVideo: {
+    productvideo: {
         type: String,
         required: true
     },
-    tutorialVideo: {
+    tutorialvideo: {
         type: String,
         required: true
     },
-    AlcoholPercentage: {
+    alcoholpercentage: {
         type: String,
         required: true
     },
-    IngredientImages: {
+    ingredientimages: {
         type: [String],
         required: true
     },

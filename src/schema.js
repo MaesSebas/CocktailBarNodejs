@@ -36,12 +36,12 @@ module.exports = gql`
         garnish: [String]
         tags: [String]
         images: [String]
-        tutorialVideo: String
+        tutorialvideo: String
         difficulty: String
         steps: [String]
-        productVideo: String
-        AlcoholPercentage: String
-        IngredientImages: [String]
+        productvideo: String
+        alcoholpercentage: String
+        ingredientimages: [String]
     }
     type Query {
         hello: String,
@@ -49,8 +49,35 @@ module.exports = gql`
         book(id: ID!): Book!,
         cocktails: [Cocktail!]!,
         userData: [UserData!]!,
+        orders: [Order!]!,
+    }
+    type Order {
+        id: ID!
+        cartitems: [CartItem]
+        orderid: String!
+        total: String!
+        deliveryoption: String!
+    }
+    type CartItem {
+        id: ID
+        image: String
+        title: String
+        size: String
+        quantity: String
+        itemprice: String
+        totalprice: String
+    }
+    input cartItemInput {
+        id: ID
+        image: String
+        title: String
+        size: String
+        quantity: String
+        itemprice: String
+        totalprice: String
     }
     type Mutation {
+        addOrder(cartitems: [cartItemInput]!, orderid: String!, total: String!, deliveryoption: String!): Order!
         addBook(title: String!, author: String!): Book!
         updateBook(id: ID!, title: String!, author: String!): Book!
         deleteBook(id: ID!): Boolean!
@@ -59,7 +86,4 @@ module.exports = gql`
         signUp(username: String!, email: String!, password: String!): String!
         signIn(username: String, email: String, password: String!): String!
     }
-
 `;
-
-

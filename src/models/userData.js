@@ -14,6 +14,14 @@ const UserDataSchema = new mongoose.Schema(
         type: String,
         //required: true
     },
+    lastName: {
+        type: String,
+        //required: true
+    },
+    phoneNumber: {
+        type: String,
+        //required: true
+    },
     street: {
         type: String,
         //required: true
@@ -38,7 +46,19 @@ const UserDataSchema = new mongoose.Schema(
         type: String,
         //required: true
     },
+    creditcardLastName: {
+        type: String,
+        //required: true
+    },
     creditcardNumber: {
+        type: String,
+        //required: true
+    },
+    pushNotifications: {
+        type: String,
+        //required: true
+    },
+    emailUpdates: {
         type: String,
         //required: true
     },

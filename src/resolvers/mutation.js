@@ -55,13 +55,18 @@ module.exports = {
           username: args.username,
           sex: args.sex,
           name: args.name,
+          lastName: args.lastName,
+          phoneNumber: args.phoneNumber,
           street: args.street,
           number: args.number,
           city: args.city,
           postalCode: args.postalCode,
           country: args.country,
           creditcardName: args.creditcardName,
-          creditcardNumber: args.creditcardNumber
+          creditcardLastName: args.creditcardLastName,
+          creditcardNumber: args.creditcardNumber,
+          pushNotifications: args.pushNotifications,
+          emailUpdates: args.emailUpdates
         });
       
         return userData;

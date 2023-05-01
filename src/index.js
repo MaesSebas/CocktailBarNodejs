@@ -60,10 +60,11 @@ async function startServer() {
 startServer().then(() => {
   app.get('/', (req, res) => res.send('Hello World'));
   
-  
+  /*
   app.listen({ port }, () =>
     console.log(`Server running at http://localhost:${port}`)
   );
+  */
   
   
   
@@ -72,5 +73,5 @@ startServer().then(() => {
   
   
   
-  //app.listen(process.env.PORT || 8080, () => console.log('Server Running'))
+  app.listen(process.env.PORT || 8080, () => console.log('Server Running'))
 });

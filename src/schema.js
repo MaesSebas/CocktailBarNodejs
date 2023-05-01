@@ -17,13 +17,18 @@ module.exports = gql`
         username: String
         sex: String
         name: String
+        lastName: String
+        phoneNumber: String
         street: String
         number: String
         city: String
         postalCode: String
         country: String
         creditcardName: String
+        creditcardLastName: String
         creditcardNumber: String
+        pushNotifications: String
+        emailUpdates: String
     }
     type Cocktail {
         id: ID!
@@ -82,7 +87,7 @@ module.exports = gql`
         updateBook(id: ID!, title: String!, author: String!): Book!
         deleteBook(id: ID!): Boolean!
         addCocktail(description: String!, garnish: [String]!, ingredients: [String]!, juice: [String]!, name: String!, price: String!, stock: String!, tags: [String]!, steps: [String]!, difficulty: String!, images: [String]!, productVideo: String!, tutorialVideo: String! ): Cocktail!
-        addUserData(username: String!, sex: String!, name: String!, street: String!, number: String!, city: String!, postalCode: String!, country: String!, creditcardName: String!, creditcardNumber: String!): UserData!
+        addUserData(username: String!, sex: String!, name: String!, lastName: String!, phoneNumber: String!, street: String!, number: String!, city: String!, postalCode: String!, country: String!, creditcardName: String!, creditcardLastName: String!, creditcardNumber: String!, pushNotifications: String!, emailUpdates: String!): UserData!
         signUp(username: String!, email: String!, password: String!): String!
         signIn(username: String, email: String, password: String!): String!
     }
